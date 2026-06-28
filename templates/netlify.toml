@@ -1,0 +1,12 @@
+# Netlify configuration template.
+# Adjust `publish` to the directory containing your built site.
+
+[build]
+  publish = "."
+  # command = "npm run build"
+
+# Uncomment for single-page apps that need client-side routing fallback.
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
