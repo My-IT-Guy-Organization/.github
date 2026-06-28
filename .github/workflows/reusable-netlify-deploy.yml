@@ -1,0 +1,42 @@
+name: Reusable - Netlify Deploy
+
+on:
+  workflow_call:
+    inputs:
+      publish-dir:
+        description: "Directory to deploy"
+        type: string
+        default: "."
+      build-command:
+        description: "Optional build command to run before deploy"
+        type: string
+        default: ""
+    secrets:
+      NETLIFY_AUTH_TOKEN:
+        required: true
+      NETLIFY_SITE_ID:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        if: inputs.build-command != ''
+        run: ${{ inputs.build-command }}
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3
+        with:
+          publish-dir: ${{ inputs.publish-dir }}
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from ${{ github.repository }}@${{ github.sha }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 5
