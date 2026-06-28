@@ -1,0 +1,118 @@
+{
+  "name": "Standard Dev Workspace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": "true",
+      "moby": "true"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "true",
+      "configureZshAsDefaultShell": "true"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "latest"
+    },
+    "ghcr.io/siri404/devcontainer-ai-features/claude-code:1": {
+      "version": "latest"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "files.eol": "\n",
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "git.autofetch": true,
+        "liveServer.settings.multiRootWorkspaceName": "MyITGuy",
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
+        ],
+        "files.exclude": {
+          "**/.pytest_cache": true,
+          "**/__pycache__": true
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/usr/bin/zsh",
+            "args": ["-i"]
+          }
+        },
+        "liveServer.settings.donotShowInfoMsg": true,
+        "github.copilot.nextEditSuggestions.enabled": true,
+        "chatgpt.openOnStar11tup": true,
+        "chat.extensionUnification.enabled": true,
+        "git.enableSmartCommit": true,
+        "chatgpt.openOnStartup": true,
+        "gitlens.ai.model": "vscode",
+        "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+        "diffEditor.codeLens": true,
+        "chat.mcp.gallery.enabled": true,
+        "explorer.confirmDragAndDrop": false,
+        "explorer.confirmDelete": false,
+        "http.systemCertificatesNode": true,
+        "projectManager.git.baseFolders": [
+          "Coding envirnment"
+        ],
+        "terminal.integrated.enableMultiLinePasteWarning": "never",
+        "gemini-cli.debug.logging.enabled": true,
+        "[jsonc]": {
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "editor.linkedEditing": true,
+        "mcp": {
+          "servers": {
+            "io.github.github/github-mcp-server": {
+              "type": "stdio",
+              "command": "docker",
+              "args": [
+                "run",
+                "-i",
+                "--rm",
+                "-e",
+                "GITHUB_PERSONAL_ACCESS_TOKEN=${input:token}",
+                "ghcr.io/github/github-mcp-server:0.28.1"
+              ],
+              "gallery": "https://api.mcp.github.com",
+              "version": "0.28.1"
+            }
+          },
+          "inputs": [
+            {
+              "id": "token",
+              "type": "promptString",
+              "description": "",
+              "password": true
+            }
+          ]
+        }
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ritwickdey.liveserver",
+        "github.copilot",
+        "github.copilot-chat",
+        "eamodio.gitlens",
+        "alefragnani.project-manager",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code",
+  "remoteUser": "vscode"
+}
