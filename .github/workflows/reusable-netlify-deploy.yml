@@ -28,7 +28,7 @@ jobs:
         run: ${{ inputs.build-command }}
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3
+        uses: nwtgck/actions-netlify@v4
         with:
           publish-dir: ${{ inputs.publish-dir }}
           production-branch: main
