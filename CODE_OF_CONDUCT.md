@@ -14,4 +14,4 @@ We are committed to providing a friendly, safe, and welcoming environment for al
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at [garrettadams1010@gmail.com].
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at [conduct@myitguy.com](mailto:conduct@myitguy.com).
