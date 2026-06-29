@@ -1,13 +1,13 @@
 # My IT Guy DevOps Hub
 
 Central DevOps hub for **My IT Guy LLC** — shared CI/CD workflows, project
-templates, documentation, and a dashboard of every repo across the business.
+templates, documentation, and a dashboard of the org's public repos.
 
 ## What's in here
 
 | Path | Purpose |
 |---|---|
-| [`PROJECTS.md`](PROJECTS.md) | Dashboard of all business/client repos: stack, visibility, status |
+| [`PROJECTS.md`](PROJECTS.md) | Dashboard of the org's public repos: stack and status |
 | [`.github/workflows/`](.github/workflows) | Reusable GitHub Actions workflows (CI, deploy, security) shared across repos |
 | [`templates/`](templates) | Starter files (CI workflows, `.gitignore`, `dependabot.yml`, `netlify.toml`, `.editorconfig`) to copy into new repos |
 | [`docs/`](docs) | Runbooks and standards: new project setup, deployment, git workflow, coding standards |
