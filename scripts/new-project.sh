@@ -5,7 +5,8 @@ set -euo pipefail
 
 TYPE="${1:?Usage: new-project.sh <node|python|static> [target-dir]}"
 TARGET="${2:-.}"
-DEVOPS_REPO="git@github.com:My-IT-Guy-Organization/My-IT-Guy-DevOps.git"
+# HTTPS so it works without SSH keys configured.
+DEVOPS_REPO="https://github.com/My-IT-Guy-Organization/.github.git"
 
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
@@ -35,8 +36,8 @@ esac
 
 cp "$TMP/templates/.editorconfig" "$TARGET/.editorconfig"
 cp "$TMP/templates/dependabot.yml" "$TARGET/.github/dependabot.yml"
-cp "$TMP/.github/PULL_REQUEST_TEMPLATE.md" "$TARGET/.github/PULL_REQUEST_TEMPLATE.md"
-cp -r "$TMP/.github/ISSUE_TEMPLATE/." "$TARGET/.github/ISSUE_TEMPLATE/"
+cp "$TMP/PULL_REQUEST_TEMPLATE.md" "$TARGET/.github/PULL_REQUEST_TEMPLATE.md"
+cp -r "$TMP/ISSUE_TEMPLATE/." "$TARGET/.github/ISSUE_TEMPLATE/"
 
 echo "Bootstrapped $TYPE project files in $TARGET"
 echo "Review the new files, then git add & commit them."

@@ -21,23 +21,22 @@ end of the doc.
 
 ## 1. Quick wins (this week)
 
-- [ ] **Rename `Profile/` → `profile/`** — GitHub only renders the org profile README from lowercase `profile/README.md`, so the current capital-P folder likely isn't showing on the org page at all
-- [ ] Fix the "Organzization" typo in the profile README heading
-- [ ] Clean `.devcontainer/devcontainer.json`: remove the typo'd `chatgpt.openOnStar11tup` key, and drop the third-party `claude-code` devcontainer feature — `postCreateCommand` already installs Claude Code from the official package, so the extra feature is redundant
-- [ ] Add descriptions + topics to every public repo; pin the best ones on the org profile
-- [ ] Create the private ops repo that §3 and the scope note refer to
+- [x] **Rename `Profile/` → `profile/`** — GitHub only renders the org profile README from lowercase `profile/README.md`
+- [x] Fix the "Organzization" typo in the profile README heading
+- [x] Clean `.devcontainer/devcontainer.json`: removed the typo'd `chatgpt.openOnStar11tup` key and the redundant third-party `claude-code` devcontainer feature
+- [ ] Add descriptions + topics to every public repo; pin the best ones on the org profile *(needs repo settings access)*
+- [ ] Create the private ops repo that §3 and the scope note refer to *(needs a new repo)*
 
 ## 2. Consolidation — make this repo the single DevOps home
 
 The DevOps content now lives here, but every pointer still targets the old
 repo. Until this section is done, the two copies can drift apart.
 
-- [ ] Repoint `uses:` references in `templates/workflows/*.yml` from
-      `My-IT-Guy-Organization/My-IT-Guy-DevOps/...` → `My-IT-Guy-Organization/.github/.github/workflows/...@main`
-- [ ] Update `scripts/new-project.sh` — `DEVOPS_REPO` should clone this repo (use the HTTPS URL so it works without SSH keys)
-- [ ] Update `docs/runbooks/new-project-setup.md` step 3 to reference this repo's workflows
-- [ ] Verify **Settings → Actions → General → Access** on this repo allows other org repos to call the reusable workflows
-- [ ] Archive `My-IT-Guy-DevOps` with a README pointing here, so nobody updates the stale copy
+- [x] Repoint `uses:` references in `templates/workflows/*.yml` and the README example to `My-IT-Guy-Organization/.github/.github/workflows/...@main`
+- [x] Update `scripts/new-project.sh` — `DEVOPS_REPO` now clones this repo over HTTPS; template copy paths fixed
+- [x] Update `docs/runbooks/new-project-setup.md` step 3 to reference this repo's workflows
+- [ ] Verify **Settings → Actions → General → Access** on this repo allows other org repos to call the reusable workflows *(needs repo settings access)*
+- [ ] Archive `My-IT-Guy-DevOps` with a README pointing here, so nobody updates the stale copy *(needs access to that repo)*
 
 ## 3. Security & governance
 
@@ -48,7 +47,7 @@ and reviews there, and keep this file to technical work.
 
 ## 4. CI/CD platform
 
-- [ ] Add a **`workflow-templates/`** directory here — org "starter workflows" appear natively in every org repo's *Actions → New workflow* tab, which beats copying files by hand (mirror `templates/workflows/`, add matching `.properties.json` files)
+- [x] Add a **`workflow-templates/`** directory — org starter workflows (node-ci, python-ci, netlify-deploy) with matching `.properties.json`
 - [ ] Roll the reusable CI out to each active public repo — track adoption in `PROJECTS.md` with a CI column/badge
 - [ ] Roll `reusable-codeql.yml` out to public repos (CodeQL is free on public repos)
 - [ ] Add a reusable **lint/format** workflow (Prettier + ESLint for JS, `ruff format` for Python) so style checks are uniform
@@ -60,26 +59,26 @@ and reviews there, and keep this file to technical work.
 
 ## 5. Templates & standards upgrades
 
-- [ ] Convert `ISSUE_TEMPLATE/*.md` to **YAML issue forms** — structured, required fields produce far better bug reports
-- [ ] Expand `ISSUE_TEMPLATE/config.yml` with contact links (security reporting, support → business site)
-- [ ] Standardize labels org-wide: a `labels.yml` here + a sync workflow so every repo shares the same label set
-- [ ] Create true **GitHub template repositories** (`site-template`, `python-tool-template`, `node-app-template`) — "Use this template" replaces most of `new-project.sh`
-- [ ] Add to `templates/`: README skeleton, `CODEOWNERS` example, LICENSE guidance
-- [ ] Auto-label PRs by path (actions/labeler) and by size — helps triage at a glance
+- [x] Convert `ISSUE_TEMPLATE/*.md` to **YAML issue forms** — structured, required fields
+- [x] Expand `ISSUE_TEMPLATE/config.yml` with contact links (security reporting, support → business site)
+- [x] Standardize labels: `.github/labels.yml` + `label-sync.yml` workflow as the canonical set
+- [ ] Create true **GitHub template repositories** (`site-template`, `python-tool-template`, `node-app-template`) — "Use this template" replaces most of `new-project.sh` *(needs new repos)*
+- [x] Add to `templates/`: README skeleton and `CODEOWNERS` example (LICENSE guidance still TODO)
+- [x] Auto-label PRs by path (`.github/labeler.yml` + `labeler.yml` workflow)
 
 ## 6. Documentation & runbooks
 
 Existing: `deploy-netlify.md`, `new-project-setup.md`, coding standards, git
 workflow. Add:
 
-- [ ] **Incident runbook**: site down — triage steps, hosting status, DNS checks, rollback procedure
+- [x] **Incident runbook**: site down — triage steps, hosting status, DNS checks, rollback procedure
 - [ ] **DNS & domain management** runbook (procedures here; account specifics stay private)
 - [ ] **Backup & restore** runbook: what's backed up, where, and how to restore it
 - [ ] **Project onboarding** checklist: intake questions, asset collection, kickoff
 - [ ] **Project offboarding** checklist: handover, archive/transfer steps
-- [ ] **Monthly maintenance** checklist: dependency PRs, uptime review, backup verification
-- [ ] Standards: PR review checklist, versioning policy, browser-support matrix, accessibility baseline (WCAG AA)
-- [ ] Lightweight decision log (`docs/decisions/`, one short file per significant choice) — future-you will thank present-you
+- [x] **Monthly maintenance** checklist: dependency PRs, uptime review, backup verification
+- [x] Standards: PR review checklist (versioning policy, browser-support matrix, accessibility baseline still TODO)
+- [x] Lightweight decision log (`docs/decisions/`) — seeded with ADR 0001
 
 ## 7. Site & service operations
 

@@ -1,0 +1,7 @@
+{
+  "name": "Node CI (My IT Guy)",
+  "description": "Lint, test, and build a Node project via the org's reusable CI workflow.",
+  "iconName": "nodejs",
+  "categories": ["Continuous integration", "JavaScript", "TypeScript"],
+  "filePatterns": ["package\\.json$"]
+}

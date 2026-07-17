@@ -1,0 +1,7 @@
+{
+  "name": "Deploy to Netlify (My IT Guy)",
+  "description": "Deploy a static site to Netlify on push to the default branch via the org's reusable workflow.",
+  "iconName": "rocket",
+  "categories": ["Deployment"],
+  "filePatterns": ["netlify\\.toml$"]
+}

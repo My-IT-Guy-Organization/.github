@@ -10,8 +10,10 @@ templates, documentation, and a dashboard of the org's public repos.
 | [`PROJECTS.md`](PROJECTS.md) | Dashboard of the org's public repos: stack and status |
 | [`.github/workflows/`](.github/workflows) | Reusable GitHub Actions workflows (CI, deploy, security) shared across repos |
 | [`templates/`](templates) | Starter files (CI workflows, `.gitignore`, `dependabot.yml`, `netlify.toml`, `.editorconfig`) to copy into new repos |
-| [`docs/`](docs) | Runbooks and standards: new project setup, deployment, git workflow, coding standards |
+| [`docs/`](docs) | Runbooks, standards, and [decision records](docs/decisions): setup, deployment, incident response, maintenance, git workflow, coding & review standards |
 | [`scripts/`](scripts) | Helper scripts — e.g. [`new-project.sh`](scripts/new-project.sh) to bootstrap a new repo |
+| [`workflow-templates/`](workflow-templates) | Org **starter workflows** — appear in every org repo's *Actions → New workflow* tab |
+| [`PLAN.md`](PLAN.md) | Living DevOps roadmap for the org |
 
 ## Using the reusable workflows
 
@@ -20,7 +22,7 @@ Other repos in the org can call the workflows defined here directly:
 ```yaml
 jobs:
   ci:
-    uses: My-IT-Guy-Organization/My-IT-Guy-DevOps/.github/workflows/reusable-node-ci.yml@main
+    uses: My-IT-Guy-Organization/.github/.github/workflows/reusable-node-ci.yml@main
 ```
 
 > If the calling repo is private, confirm under **Settings → Actions → General → Access**

@@ -1,0 +1,7 @@
+{
+  "name": "Python CI (My IT Guy)",
+  "description": "Install, lint with ruff, and test with pytest via the org's reusable CI workflow.",
+  "iconName": "python",
+  "categories": ["Continuous integration", "Python"],
+  "filePatterns": ["requirements.*\\.txt$", "pyproject\\.toml$"]
+}
