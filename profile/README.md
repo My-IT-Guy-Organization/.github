@@ -1,4 +1,4 @@
-# Welcome to My IT Guy Organzization
+# Welcome to My IT Guy Organization
 
 Providing professional IT services, infrastructure automation, and tech solutions.
 
@@ -22,4 +22,4 @@ This organization houses our automation pipelines, infrastructure-as-code deploy
 
 ## Contact
 
-Reach out to us for IT support and consultations at [[MY IT Guy Website](https://myitguy.netlify.app/)].
+Reach out to us for IT support and consultations at [myitguy.netlify.app](https://myitguy.netlify.app/).

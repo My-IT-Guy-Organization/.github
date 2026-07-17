@@ -1,0 +1,11 @@
+# Code owners for this repository.
+# Owners are automatically requested for review on matching PRs.
+# Copy this into a new repo's root (or .github/) and adjust to taste.
+
+# Default owner for everything:
+*       @garrettadams23
+
+# Examples of narrowing ownership by path:
+# /docs/          @garrettadams23
+# /.github/       @garrettadams23
+# *.tf            @garrettadams23

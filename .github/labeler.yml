@@ -1,0 +1,10 @@
+# Path-based auto-labeling for PRs (used by .github/workflows/labeler.yml).
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ["docs/**", "**/*.md"]
+templates:
+  - changed-files:
+      - any-glob-to-any-file: ["templates/**", "workflow-templates/**"]
+ci:
+  - changed-files:
+      - any-glob-to-any-file: [".github/workflows/**"]

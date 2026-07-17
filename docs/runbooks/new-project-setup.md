@@ -28,8 +28,9 @@ This copies in:
 ## 3. Wire up CI
 
 - Confirm the new repo's workflow references
-  `My-IT-Guy-Organization/My-IT-Guy-DevOps/.github/workflows/reusable-*.yml@main`.
-- If the new repo is private, make sure this DevOps repo's
+  `My-IT-Guy-Organization/.github/.github/workflows/reusable-*.yml@main`
+  (the doubled `.github` is correct — the repo is named `.github`).
+- If the new repo is private, make sure the `.github` repo's
   **Settings → Actions → General → Access** allows access from private
   repositories in the organization.
 

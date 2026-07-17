@@ -17,9 +17,6 @@
     },
     "ghcr.io/devcontainers/features/python:1": {
       "version": "latest"
-    },
-    "ghcr.io/siri404/devcontainer-ai-features/claude-code:1": {
-      "version": "latest"
     }
   },
 
@@ -53,7 +50,6 @@
         },
         "liveServer.settings.donotShowInfoMsg": true,
         "github.copilot.nextEditSuggestions.enabled": true,
-        "chatgpt.openOnStar11tup": true,
         "chat.extensionUnification.enabled": true,
         "git.enableSmartCommit": true,
         "chatgpt.openOnStartup": true,

@@ -1,8 +1,8 @@
-name: Deploy
+name: Deploy to Netlify
 
 on:
   push:
-    branches: [main]
+    branches: ["$default-branch"]
 
 jobs:
   deploy:

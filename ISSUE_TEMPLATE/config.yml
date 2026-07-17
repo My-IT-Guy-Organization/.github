@@ -1,1 +1,8 @@
 blank_issues_enabled: true
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/My-IT-Guy-Organization/.github/security/policy
+    about: Please report security issues privately per our security policy — do not open a public issue.
+  - name: Business site & general contact
+    url: https://myitguy.netlify.app/
+    about: For general questions and IT support enquiries.
